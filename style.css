@@ -13,12 +13,10 @@ body {
     width: 80%;
 }
 .option {
-    width: 100%;
+    width: 80%;
 }
 .choices {
-    width: 20%;
-    display: flex;
-    flex-direction: column;
+
 }
 .image  {
     height: auto;
@@ -32,4 +30,12 @@ body {
     width: 500px;
     height: 8px;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(62,62,181,1) 35%, rgba(0,212,255,1) 100%);
+}
+#opt1,#opt2,#opt3,#opt4 {
+    width: fit-content;
+}
+.set {
+    display: flex;
+    background-color: grey;
+    margin: 10px;
 }
