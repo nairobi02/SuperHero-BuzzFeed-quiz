@@ -1,0 +1,28 @@
+body {
+    background-color: #f1faee;
+    margin: 0;
+}
+.page {
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.question {
+    
+}
+.option {
+    
+}
+.image img {
+    height: auto;
+    max-width: 100%;
+}
+.indicator {
+    width: 500px;
+    height: 8px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(62,62,181,1) 35%, rgba(0,212,255,1) 100%);
+}
+.img {
+    width : 50%;
+}
