@@ -137,7 +137,7 @@ img {
 }
 .tick {
   background: url(./tick.svg) no-repeat center;
-  background-color: var(--bg);
+  background-color: var(--primary);
 }
 .lotti {
   position: absolute;
@@ -147,3 +147,22 @@ img {
   transform: translate(-50%, -50%);
   opacity: 0.2;
 }
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f4f6f5;
+    --progress-left: #1b65b5;
+    --progress-right: #7aace1;
+    --options: #e2e3e4;
+    --primary: #474545;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #212121;
+    --progress-left: #e2e3e4;
+    --progress-right: #e2e3e4;
+    --options: #404040;
+    --primary: #e2e3e4;
+  }
+}
+  
