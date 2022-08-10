@@ -1,19 +1,22 @@
 :root {
   /* light theme */
   --bg-light: #f4f6f5;
+  --indicator-light: #e2e3e4;
   --progress-left-light: #1b65b5;
   --progress-right-light: #7aace1;
   --options-light: #e2e3e4;
   --primary-light: #474545;
 
   /*dark theme*/
-  --bg-dark: black;
-  --progress-left-dark: black;
-  --progress-right-dark: black;
-  --options-dark: black;
-  --primary-dark: black;
+  --bg-dark: #222222;
+  --indicator-dark: #313131;
+  --progress-left-dark: #bc089f;
+  --progress-right-dark: #f37dfe2a;
+  --options-dark: #353535;
+  --primary-dark: rgb(227, 227, 227);
   /*default theme*/
   --bg: var(--bg-light);
+  --indicator: var(--indicator-light);
   --progress-left: var(--progress-left-light);
   --progress-right: var(--progress-right-light);
   --options: var(--options-light);
@@ -54,13 +57,13 @@ body {
 .indicator {
   height: 10px;
   width: 80%;
-  background-color: #e2e3e4;
+  background-color: var(--indicator);
   border-radius: 5px;
   margin: min(10px, 3vh) 0 0 0;
   overflow: hidden;
 }
 .indicator_progress {
-  width: 10%;
+  width: 0%;
   background-image: linear-gradient(
     to right,
     var(--progress-left),
@@ -68,6 +71,7 @@ body {
   );
   height: 100%;
   border-radius: 5px;
+  transition: all 0.5s ease;
 }
 .image {
   height: fit-content;
@@ -134,10 +138,13 @@ img {
   .imagetwo {
     display: block;
   }
+  .options:hover {
+    transform: none;
+  }
 }
 .tick {
-  background: url(./tick.svg) no-repeat center;
-  background-color: var(--primary);
+  background: url(./images/tick.svg) no-repeat center;
+  background-color: var(--bg);
 }
 .lotti {
   position: absolute;
@@ -147,22 +154,32 @@ img {
   transform: translate(-50%, -50%);
   opacity: 0.2;
 }
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg: #f4f6f5;
-    --progress-left: #1b65b5;
-    --progress-right: #7aace1;
-    --options: #e2e3e4;
-    --primary: #474545;
-  }
+.displayContainer {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.winningPicture {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.4;
+  z-index: -1;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #212121;
-    --progress-left: #e2e3e4;
-    --progress-right: #e2e3e4;
-    --options: #404040;
-    --primary: #e2e3e4;
+    --bg: var(--bg-dark);
+    --indicator: var(--indicator-dark);
+    --progress-left: var(--progress-left-dark);
+    --progress-right: var(--progress-right-dark);
+    --options: var(--options-dark);
+    --primary: var(--primary-dark);
+  }
+  .tick {
+    background: url(./images/tick2.svg) no-repeat center;
+    background-color: var(--bg);
   }
 }
-  
