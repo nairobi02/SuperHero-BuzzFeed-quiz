@@ -1,43 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>SuperHero BuzzFeed Quiz</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
+  <title>SuperHero BuzzFeed Quiz</title>
 </head>
+
 <body>
-  <div class="page"> <!-- Div for the whole page -->
-    <div class="indicator"></div><!-- Div for the slider -->
-    <div class="image"><!-- Div for the image -->
-        <img src="https://cdn.thelivemirror.com/wp-content/uploads/2019/10/marvel-superhero-quiz.jpg" alt="">
+  <!-- Div for the whole page -->
+  <div class="page">
+    <!-- Div for the slider -->
+    <div class="indicator">
+      <div class="indicator_progress"></div>
     </div>
-    <div class="question"><h1>Question</h1></div><!-- Div for the Question -->
-    <div class="option"><!-- Div for the options -->
-        <form action="/action" class="choices">
-          <div class="set">
-            <label for="opt1"></label>
-            <input type="radio" id="opt1" name="options" value="">
-            <h3>Option 2</h3>
-          </div>
-          <div class="set">
-            <label for="opt2"></label> 
-            <input type="radio" id="opt2" name="options" value="">
-            <h3>Option 2</h3>
-          </div>
-          <div class="set"> 
-            <label for="opt3"></label> 
-            <input type="radio" id="opt3" name="options" value="">
-            <h3>Option 2</h3>
-          </div> 
-          <div class="set">  
-            <label for="opt4"></label> 
-            <input type="radio" id="opt4" name="options" value="">
-            <h3>Option 2</h3>
-          </div>  
-        </form>
+    <!-- Div for the image -->
+    <div class="image">
+      <img src="./images/pngwing.com2.png" alt="" class="imageone">
+      <img src="images/toppng.com-captain-america-portrait-art-marvel-avenger-captain-america-726x1023.png" alt=""
+        class="imagetwo">
     </div>
-  </div>  
+    <section class="q_a">
+      <!-- Div for the Question -->
+      <div class="question_space">
+        <div class="question">1. If you lived in a Marvel comic book universe, which of the following characters could
+          be your best friend?</div>
+      </div>
+      <!-- Div for the options -->
+      <div class="options_space">
+        <div class="options option1">
+          <div class="checkbox"></div>
+          <div class="option_text">Option 1</div>
+        </div>
+        <div class="options option2">
+          <div class="checkbox"></div>
+          <div class="option_text">Option 2</div>
+        </div>
+        <div class="options option3">
+          <div class="checkbox"></div>
+          <div class="option_text">Option 3</div>
+        </div>
+        <div class="options option4">
+          <div class="checkbox"></div>
+          <div class="option_text">Option 4</div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="lotti">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_av0ub7mb.json" background="transparent"
+      speed="0.5" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+  </div>
 </body>
+
 </html>
