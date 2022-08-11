@@ -67,15 +67,15 @@ body {
   background-image: linear-gradient(
     to right,
     var(--progress-left),
-    var(--progress-right) 70%
+    var(--progress-right)
   );
   height: 100%;
   border-radius: 5px;
-  transition: all 0.5s ease;
+  transition: all 0.5s ease-out;
 }
 .image {
   height: fit-content;
-  max-width: 60%;
+  max-width: 65%;
 
   display: flex;
   justify-content: center;
@@ -84,6 +84,7 @@ body {
 img {
   height: auto;
   max-width: 100%;
+  -webkit-user-drag: none;
 }
 .q_a {
   margin: min(50px, 3vh);
@@ -141,6 +142,9 @@ img {
   .options:hover {
     transform: none;
   }
+  .image {
+    max-width: 100%;
+  }
 }
 .tick {
   background: url(./images/tick.svg) no-repeat center;
@@ -152,6 +156,7 @@ img {
   left: 50%;
   z-index: -1;
   transform: translate(-50%, -50%);
+
   opacity: 0.2;
 }
 .displayContainer {
@@ -160,6 +165,7 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  user-select: none;
 }
 .winningPicture {
   position: absolute;
@@ -168,6 +174,8 @@ img {
   transform: translate(-50%, -50%);
   opacity: 0.4;
   z-index: -1;
+  height: auto;
+  max-width: 100%;
 }
 @media (prefers-color-scheme: dark) {
   :root {

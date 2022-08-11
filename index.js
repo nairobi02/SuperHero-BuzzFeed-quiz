@@ -1,32 +1,32 @@
 const questions = [
     {
         question: "1.Question",
-        Hulk: "Hulk",
-        IronMan: "Iron Man",
-        JohnCena: "John Cena",
+        hulk: "Hulk",
+        ironMan: "Iron Man",
+        thor: "Thor",
         CaptainAmerica: "Captain America",
 
     },
     {
         question: "2.Question",
-        Hulk: "Hulk",
-        IronMan: "Iron Man",
-        JohnCena: "John Cena",
-        CaptainAmerica: "Captain America",
+        hulk: "Hulk",
+        ironMan: "Iron Man",
+        thor: "Thor",
+        captainAmerica: "Captain America",
     },
     {
         question: "3.Question",
-        Hulk: "Hulk",
-        IronMan: "Iron Man",
-        JohnCena: "John Cena",
-        CaptainAmerica: "Captain America",
+        hulk: "Hulk",
+        ironMan: "Iron Man",
+        thor: "Thor",
+        captainAmerica: "Captain America",
     }
 ]
 const characterScores = {
-    Hulk: 0,
-    IronMan: 0,
-    JohnCena: 0,
-    CaptainAmerica: 0,
+    hulk: 0,
+    ironMan: 0,
+    thor: 0,
+    captainAmerica: 0,
 }
 let questionsLimit = questions.length;
 let acceptingAnswers = false;
@@ -57,10 +57,12 @@ function nextQuestion() {
             indicatorProgress.style.width = percentDone + '%';
             let char = this.children[1].innerHTML;
             temp = char.replace(/\s+/g, '');
-            characterScores[temp] = characterScores[temp] + 1;
+            let camel = temp.charAt(0).toLowerCase() + temp.slice(1);
+            console.log(camel);
+            characterScores[camel] = characterScores[camel] + 1;
+            console.log(characterScores);
             if (questionNo < (questionsLimit - 1)) {
                 setTimeout(() => {
-                    console.log(characterScores);
                     questionNo++;
                     nextQuestion();
                 }, 1000)
@@ -81,25 +83,34 @@ function iterate(item, index) {
 function showResult() {
     let page = document.querySelector('.page');
     page.parentNode.removeChild(page);
-    let lotti = document.querySelector('.lotti');
-    lotti.parentNode.removeChild(lotti);
+    let max = Object.keys(characterScores).reduce((a, b) => characterScores[a] > characterScores[b] ? a : b);
+    let camelCase = max.charAt(0).toLowerCase() + max.slice(1);
+    console.log(camelCase);
+
+
     let display = document.createElement('div');
     display.classList.add('displayContainer');
+    let img = document.createElement('img');
+    let path = './images/' + camelCase + '.png';
+    img.setAttribute('src', path);
+
+    //show text//
+
     let div1 = document.createElement('div');
     div1.innerHTML = 'You are';
     let div2 = document.createElement('div');
-    let max = Object.keys(characterScores).reduce((a, b) => characterScores[a] > characterScores[b] ? a : b);
-    var result = max.replace(/([A-Z])/g, " $1");
-    var finalResult = result.charAt(0).toUpperCase() + result.slice(1);
+    let result = max.replace(/([A-Z])/g, " $1");
+    let finalResult = result.charAt(0).toUpperCase() + result.slice(1);
     div2.innerHTML = `${finalResult}`
-    let img = document.createElement('img');
-    img.setAttribute('src', './images/hulk.png')
+    div2.style.textShadow = "3px 3px #5a5a5a";
+    div2.style.fontSize = 'min(4rem,10vw)';
+
+    //show image//
+
     img.classList.add('winningPicture')
     document.querySelector('body').appendChild(display);
     document.querySelector('body').appendChild(img);
-
     display.appendChild(div1);
-    div2.style.fontSize = '4rem';
     display.appendChild(div2);
 }
 
