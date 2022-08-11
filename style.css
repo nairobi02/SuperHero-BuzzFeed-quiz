@@ -200,17 +200,28 @@ img {
   height: auto;
   max-width: 100%;
 }
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --bg: var(--bg-dark);
-    --indicator: var(--indicator-dark);
-    --progress-left: var(--progress-left-dark);
-    --progress-right: var(--progress-right-dark);
-    --options: var(--options-dark);
-    --primary: var(--primary-dark);
+.page2 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  /* position: absolute; */
+  animation: spin 1.5s linear infinite;
+}
+.hidden {
+  display: none;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-  .tick {
-    background: url(./images/tick2.svg) no-repeat center;
-    background-color: var(--bg);
+  50% {
+    transform: rotate(180deg);
   }
-} */
+  100% {
+    transform: rotate(360deg);
+  }
+}

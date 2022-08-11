@@ -21,55 +21,55 @@ const questions = [
         hawkEye: "Slingshot",
         captainAmerica: "There's no time to play when your country is at war",
     },
-    {
-        question: "4. IT'S LOOKING BAD, AND THE EMENY IS GAINING QUICK...WHAT DO YOU DO?",
-        hawkEye: "Create a diversion and use it to my advantage",
-        blackWidow: "Wait for an opportunity, there will be one...",
-        thor: "Why wait when I can finish all of them",
-        captainAmerica: "Get the civilians to safety",
-    },
-    {
-        question: "5. HOW WOULD YOU DESCRIBE YOUR PERSONALITY?",
-        thor: "Heroic",
-        captainAmerica: "Noble",
-        hulk: "Calculated",
-        blackWidow: "Which personality?",
-    },
-    {
-        question: "6. CHOOSE AN INFINITY STONE",
-        ironMan: "Mind Stone",
-        thor: "Space Stone",
-        blackWidow: "Reality Stone",
-        hawkEye: "Soul stone",
-    },
-    {
-        question: "7. WHICH SKILL DO YOU MOST VALUE?",
-        blackWidow: "Manipulation",
-        hawkEye: "Ingenuity",
-        captainAmerica: "Moral Compass",
-        ironMan: "Intelligence",
-    },
-    {
-        question: "8. DESCRIBE YOUR PERSONAL STYLE",
-        hawkEye: "Combat Ready",
-        blackWidow: "Formal",
-        ironMan: "Suits! Always suits!",
-        captainAmerica: "If you're gonna fight a war, you got to wear a uniform.",
-    },
-    {
-        question: "9. WHAT IS YOUR BIGGEST STRENGTH?",
-        thor: "Powers that I was born with",
-        hulk: "My strength",
-        ironMan: "My Intelligence",
-        captainAmerica: "My foresight",
-    },
-    {
-        question: "10. WHAT ARE YOU AFRAID OF?",
-        ironMan: "Failure",
-        hulk: "Myself",
-        hawkEye: "Losing my family",
-        blackWidow: "My Past",
-    },
+    // {
+    //     question: "4. IT'S LOOKING BAD, AND THE EMENY IS GAINING QUICK...WHAT DO YOU DO?",
+    //     hawkEye: "Create a diversion and use it to my advantage",
+    //     blackWidow: "Wait for an opportunity, there will be one...",
+    //     thor: "Why wait when I can finish all of them",
+    //     captainAmerica: "Get the civilians to safety",
+    // },
+    // {
+    //     question: "5. HOW WOULD YOU DESCRIBE YOUR PERSONALITY?",
+    //     thor: "Heroic",
+    //     captainAmerica: "Noble",
+    //     hulk: "Calculated",
+    //     blackWidow: "Which personality?",
+    // },
+    // {
+    //     question: "6. CHOOSE AN INFINITY STONE",
+    //     ironMan: "Mind Stone",
+    //     thor: "Space Stone",
+    //     blackWidow: "Reality Stone",
+    //     hawkEye: "Soul stone",
+    // },
+    // {
+    //     question: "7. WHICH SKILL DO YOU MOST VALUE?",
+    //     blackWidow: "Manipulation",
+    //     hawkEye: "Ingenuity",
+    //     captainAmerica: "Moral Compass",
+    //     ironMan: "Intelligence",
+    // },
+    // {
+    //     question: "8. DESCRIBE YOUR PERSONAL STYLE",
+    //     hawkEye: "Combat Ready",
+    //     blackWidow: "Formal",
+    //     ironMan: "Suits! Always suits!",
+    //     captainAmerica: "If you're gonna fight a war, you got to wear a uniform.",
+    // },
+    // {
+    //     question: "9. WHAT IS YOUR BIGGEST STRENGTH?",
+    //     thor: "Powers that I was born with",
+    //     hulk: "My strength",
+    //     ironMan: "My Intelligence",
+    //     captainAmerica: "My foresight",
+    // },
+    // {
+    //     question: "10. WHAT ARE YOU AFRAID OF?",
+    //     ironMan: "Failure",
+    //     hulk: "Myself",
+    //     hawkEye: "Losing my family",
+    //     blackWidow: "My Past",
+    // },
 ]
 const characterScores = {
     hulk: 0,
@@ -146,8 +146,15 @@ function showResult() {
 
     let page = document.querySelector('.page');
     page.parentNode.removeChild(page);
+    let page2 = document.createElement('div');
+    document.body.appendChild(page2);
+    page2.classList.add('.page2');
+
 
     document.body.style.backgroundColor = '#d93d27'
+    document.querySelector('.loader').classList.remove('hidden');
+
+
 
     let max = Object.keys(characterScores).reduce((a, b) => characterScores[a] > characterScores[b] ? a : b);
     let camelCase = max.charAt(0).toLowerCase() + max.slice(1);
@@ -172,11 +179,14 @@ function showResult() {
     div2.style.fontSize = 'min(4rem,10vw)';
 
     //show image//
+    setTimeout(() => {
+        document.querySelector('.loader').classList.add('hidden');
+        img.classList.add('winningPicture')
+        page2.appendChild(img);
+        page2.appendChild(display);
+        display.appendChild(div1);
+        display.appendChild(div2);
+    }, 5000);
 
-    img.classList.add('winningPicture')
-    document.querySelector('body').appendChild(img);
-    document.querySelector('body').appendChild(display);
-    display.appendChild(div1);
-    display.appendChild(div2);
 }
 
