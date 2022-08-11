@@ -43,6 +43,7 @@ body {
   color: var(--primary);
   overflow: hidden;
 }
+
 .page {
   height: 100%;
   width: 80vw;

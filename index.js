@@ -108,8 +108,8 @@ function showResult() {
     //show image//
 
     img.classList.add('winningPicture')
-    document.querySelector('body').appendChild(display);
     document.querySelector('body').appendChild(img);
+    document.querySelector('body').appendChild(display);
     display.appendChild(div1);
     display.appendChild(div2);
 }
