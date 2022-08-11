@@ -1,11 +1,14 @@
 :root {
   /* light theme */
   --bg-light: #f4f6f5;
-  --indicator-light: #e2e3e4;
-  --progress-left-light: #1b65b5;
-  --progress-right-light: #7aace1;
-  --options-light: #e2e3e4;
-  --primary-light: #474545;
+  --indicator-light: #efa43a4e;
+  --progress-left-light: #d93d27;
+  --progress-right-light: #eb523ebf;
+  /* --options-light: #e2e3e4; */
+  /* --primary-light: #474545; */
+  --options-light: #d93d27;
+  --primary-light: #efa53a;
+  --secondary-light: #e2e3e4;
 
   /*dark theme*/
   --bg-dark: #222222;
@@ -50,7 +53,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2ch;
+  gap: 0.5ch;
 }
 .imagetwo {
   display: none;
@@ -59,6 +62,8 @@ body {
   height: 10px;
   width: 80%;
   background-color: var(--indicator);
+
+  border: 1px solid var(--indicator);
   border-radius: 5px;
   margin: min(10px, 3vh) 0 0 0;
   overflow: hidden;
@@ -67,6 +72,7 @@ body {
   width: 0%;
   background-image: linear-gradient(
     to right,
+    var(--progress-left),
     var(--progress-left),
     var(--progress-right)
   );
@@ -77,7 +83,6 @@ body {
 .image {
   height: fit-content;
   max-width: 65%;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,16 +93,31 @@ img {
   -webkit-user-drag: none;
 }
 .q_a {
-  margin: min(50px, 3vh);
+  /* margin: min(50px, 3vh); */
   width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .question_space {
+  display: flex;
+  flex-wrap: wrap;
   margin: 0 0 min(5px, 5vh) 0;
+  width: 100%;
+  white-space: initial;
 }
 .question {
-  font-size: 1.2rem;
-  font-weight: 500;
-  padding-right: 20%;
+  display: flex;
+  flex-wrap: wrap;
+  color: var(--primary);
+  text-shadow: 1px 1px #474545;
+  font-size: clamp(1.2rem, 1.8vw, 2rem);
+  font-weight: 600;
+  /* padding-right: 20%; */
+  width: 85%;
+  white-space: initial;
 }
 .options_space {
   width: 100%;
@@ -106,6 +126,8 @@ img {
   flex-direction: column;
 }
 .options {
+  color: var(--secondary-light);
+
   display: flex;
   user-select: none;
   padding: 10px;
@@ -126,7 +148,7 @@ img {
   border-radius: 2px;
 }
 .options:hover {
-  box-shadow: 0px 1px 4px 0px #5a5a5a;
+  box-shadow: 0px 1px 4px 0px var(--options-light);
 
   transform: translateY(1px);
 }
@@ -173,12 +195,12 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0.4;
+  opacity: 0.9;
   z-index: -1;
   height: auto;
   max-width: 100%;
 }
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --bg: var(--bg-dark);
     --indicator: var(--indicator-dark);
@@ -191,4 +213,4 @@ img {
     background: url(./images/tick2.svg) no-repeat center;
     background-color: var(--bg);
   }
-}
+} */
