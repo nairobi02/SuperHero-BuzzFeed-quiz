@@ -87,7 +87,7 @@ const options = document.querySelectorAll('.options');
 const optionsText = document.querySelectorAll('.options .option_text');
 const indicatorProgress = document.querySelector('.indicator_progress');
 
-document.querySelector('.page').classList.add('hidden');
+
 document.querySelector('.loader').classList.remove('hidden');
 nextQuestion();
 setTimeout(() => {
