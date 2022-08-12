@@ -195,7 +195,7 @@ function showResult() {
         page2.appendChild(display);
         display.appendChild(div1);
         display.appendChild(div2);
-    }, 3500);
+    }, 2500);
 
 }
 

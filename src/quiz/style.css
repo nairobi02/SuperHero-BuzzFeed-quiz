@@ -8,6 +8,7 @@
   /* --primary-light: #474545; */
   --options-light: #d93d27;
   --primary-light: #efa53a;
+  /* --primary-light: #fbca03; */
   --secondary-light: #e2e3e4;
 
   /*dark theme*/
@@ -112,7 +113,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   color: var(--primary);
-  text-shadow: 1px 1px #474545;
+  text-shadow: 1.1px 1.1px #474545;
   font-size: clamp(1.2rem, 1.8vw, 2rem);
   font-weight: 600;
   /* padding-right: 20%; */
