@@ -86,7 +86,16 @@ const question = document.querySelector('.question')
 const options = document.querySelectorAll('.options');
 const optionsText = document.querySelectorAll('.options .option_text');
 const indicatorProgress = document.querySelector('.indicator_progress');
+
+document.querySelector('.page').classList.add('hidden');
+document.querySelector('.loader').classList.remove('hidden');
 nextQuestion();
+setTimeout(() => {
+    document.querySelector('.loader').classList.add('hidden');
+    document.querySelector('.page').classList.remove('hidden');
+}, 2000)
+
+
 function nextQuestion() {
     for (let i = 0; i < options.length; i++) {
         options[i].firstElementChild.classList.remove('tick')
