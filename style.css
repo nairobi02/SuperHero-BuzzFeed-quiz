@@ -11,12 +11,12 @@
   --secondary-light: #e2e3e4;
 
   /*dark theme*/
-  --bg-dark: #222222;
+  /* --bg-dark: #222222;
   --indicator-dark: #313131;
   --progress-left-dark: #bc089f;
   --progress-right-dark: #f37dfe2a;
   --options-dark: #353535;
-  --primary-dark: rgb(227, 227, 227);
+  --primary-dark: rgb(227, 227, 227); */
   /*default theme*/
   --bg: var(--bg-light);
   --indicator: var(--indicator-light);

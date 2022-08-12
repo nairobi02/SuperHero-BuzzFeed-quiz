@@ -186,7 +186,7 @@ function showResult() {
         page2.appendChild(display);
         display.appendChild(div1);
         display.appendChild(div2);
-    }, 5000);
+    }, 3500);
 
 }
 
