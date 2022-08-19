@@ -89,6 +89,8 @@ const indicatorProgress = document.querySelector('.indicator_progress');
 
 
 document.querySelector('.loader').classList.remove('hidden');
+
+
 nextQuestion();
 setTimeout(() => {
     document.querySelector('.loader').classList.add('hidden');
