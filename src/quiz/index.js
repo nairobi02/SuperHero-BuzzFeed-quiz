@@ -1,3 +1,5 @@
+let obj;
+export { obj as default }
 const questions = [
     {
         question: "1. WHICH WEAPON WOULD YOU LIKE THE MOST?",
@@ -79,6 +81,8 @@ const characterScores = {
     blackWidow: 0,
     hawkEye: 0
 }
+console.log('hello')
+
 let questionsLimit = questions.length;
 let acceptingAnswers = false;
 let questionNo = 0;
@@ -86,16 +90,41 @@ const question = document.querySelector('.question')
 const options = document.querySelectorAll('.options');
 const optionsText = document.querySelectorAll('.options .option_text');
 const indicatorProgress = document.querySelector('.indicator_progress');
-
-
-document.querySelector('.loader').classList.remove('hidden');
-
+let playerName;
+let qA = document.querySelector('.q_a')
+let page = document.querySelector('.page');
+let loader = document.querySelector('.loader'); loader.classList.remove('hidden');
+console.log('hello')
 
 nextQuestion();
 setTimeout(() => {
-    document.querySelector('.loader').classList.add('hidden');
-    document.querySelector('.page').classList.remove('hidden');
+    ; loader.classList.add('hidden');
+    page.classList.remove('hidden');
+    inputShow();
 }, 2000)
+
+function inputShow() {
+
+    qA.classList.add('hidden');
+
+    let modal = document.createElement('div');
+    modal.classList.add('modal');
+    let input = document.createElement('input');
+    let button = document.createElement('button');
+    button.innerHTML = 'Start Quiz';
+
+    modal.append(input, button);
+    page.append(modal);
+    function checkInput() {
+        if (input.value.length > 0) {
+            playerName = input.value;
+            modal.remove();
+            document.querySelector('.q_a').classList.remove('hidden');
+        }
+    }
+    button.addEventListener('click', checkInput);
+}
+
 
 
 function nextQuestion() {
@@ -123,7 +152,7 @@ function nextQuestion() {
 
             let char = this.getAttribute('data-id');
 
-            temp = char.replace(/\s+/g, '');
+            let temp = char.replace(/\s+/g, '');
             let camel = temp.charAt(0).toLowerCase() + temp.slice(1);
 
             characterScores[camel] = characterScores[camel] + 1;
@@ -198,6 +227,13 @@ function showResult() {
         display.appendChild(div1);
         display.appendChild(div2);
     }, 2500);
-
+    obj = {
+        name: playerName,
+        result: finalResult
+    }
+    if (obj) {
+        console.log(obj);
+        pushTodb();
+    }
 }
 
