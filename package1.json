@@ -1,18 +1,17 @@
 {
-  "name": "backend",
+  "name": "superhero-buzzfeed-quiz",
   "version": "1.0.0",
   "description": "",
   "scripts": {
     "start": "parcel ./src/index.html ./src/quiz/images/*/",
-    "build": "parcel build ./src/index.html ./src/quiz/images/*/ ",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "parcel build ./src/index.html ./src/quiz/images/*/ "
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nairobi02/SuperHero-BuzzFeed-quiz.git"
   },
-  "keywords": {},
-  "author": "",
+  "keywords": [],
+  "author": "advaith,faiz,shreyas",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nairobi02/SuperHero-BuzzFeed-quiz/issues"
@@ -20,12 +19,5 @@
   "homepage": "https://github.com/nairobi02/SuperHero-BuzzFeed-quiz#readme",
   "devDependencies": {
     "parcel": "^2.7.0"
-  },
-  "main": "mongo.js",
-  "dependencies": {
-    "body-parser": "^1.20.0",
-    "ejs": "^3.1.8",
-    "express": "^4.18.1",
-    "mongoose": "^6.5.2"
   }
 }
